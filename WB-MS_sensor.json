@@ -1,0 +1,47 @@
+{
+  "metrics":
+  [
+    {
+      "id": "0",
+      "name": "temp_in",
+      "register": "0",
+      "type": "input_register",
+      "multiplier": "0.1"
+    },
+    {
+      "id": "1",
+      "name": "humidity",
+      "register": "1",
+      "type": "input_register",
+      "multiplier": "0.1"
+    },
+    {
+      "id": "2",
+      "name": "illumination",
+      "register": "2",
+      "type": "input_register",
+      "multiplier": "1"
+    },
+    {
+      "id": "3",
+      "name": "noise",
+      "register": "3",
+      "type": "input_register",
+      "multiplier": "0.01"
+    },
+    {
+      "id": "4",
+      "name": "temp_out_1",
+      "register": "6",
+      "type": "input_register",
+      "multiplier": "0.0625"
+    },
+    {
+      "id": "5",
+      "name": "temp_out_2",
+      "register": "7",
+      "type": "input_register",
+      "multiplier": "0.0625"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "serial port": "/dev/ttyUSB0",
+  "baud rate": "9600",
+  "parity": "N",
+  "data bits": "8",
+  "stop bits": "2",
+  "devices":
+  [
+    {
+      "id": "0",
+      "slave id": "13",
+      "filename": "WB-MS_sensor.json",
+      "used metrics":
+      [
+        {
+          "id": "0",
+          "key": "temp_in",
+          "period": "10000"
+        },
+        {
+          "id": "2",
+          "key": "illum",
+          "period": "10000"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "slave id": "36",
+      "filename": "WB-MRxV_relay.json",
+      "used metrics":
+      [
+        {
+          "id": "0",
+          "key": "relay_1",
+          "period": "1000"
+        },
+        {
+          "id": "1",
+          "key": "relay_2",
+          "period": "1000"
+        }
+      ]
+    }
+  ]
+}

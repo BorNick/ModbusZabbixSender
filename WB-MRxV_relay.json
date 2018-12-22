@@ -1,0 +1,26 @@
+{
+  "metrics":
+  [
+    {
+      "id": "0",
+      "name": "relay_1",
+      "register": "0",
+      "type": "coil",
+      "multiplier": "1"
+    },
+    {
+      "id": "1",
+      "name": "relay_2",
+      "register": "1",
+      "type": "coil",
+      "multiplier": "1"
+    },
+    {
+      "id": "2",
+      "name": "relay_3",
+      "register": "2",
+      "type": "coil",
+      "multiplier": "1"
+    }
+  ]
+}
