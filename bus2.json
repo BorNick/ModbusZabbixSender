@@ -10,6 +10,7 @@
       "id": "0",
       "slave id": "13",
       "filename": "WB-MS_sensor.json",
+      "host": "New host",
       "used metrics":
       [
         {
@@ -28,6 +29,7 @@
       "id": "1",
       "slave id": "36",
       "filename": "WB-MRxV_relay.json",
+      "host": "New host",
       "used metrics":
       [
         {

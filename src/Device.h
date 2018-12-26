@@ -25,6 +25,7 @@ public:
 	Device(char* filename);
 	void setSlaveId(int);
 	int getSlaveId();
+	char* host;
 	metric * metrics;
 	int getMetricsNum();
 	virtual ~Device();

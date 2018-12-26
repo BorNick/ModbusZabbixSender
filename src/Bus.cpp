@@ -63,6 +63,8 @@ Bus::Bus(char* filename) {
 		devices[i] = Device((char*) json_object_get_string(record));
 		json_object_object_get_ex(curDevice, "slave id", &record);
 		devices[i].setSlaveId(json_object_get_int(record));
+		json_object_object_get_ex(curDevice, "host", &record);
+		devices[i].host = (char*) json_object_get_string(record);
 		json_object_object_get_ex(curDevice, "used metrics", &usedMetricsArray);
 		int usedMetricsNum = json_object_array_length(usedMetricsArray);
 		for(int j = 0; j < usedMetricsNum; j++){
@@ -126,7 +128,7 @@ void Bus::sendData(long duration){
 						char* valueAsString = (char*) stream.str().c_str();
 						cout << devices[i].metrics[j].key << ": " << valueAsString << endl;
 						devices[i].metrics[j].prevSubmit = timeMillis();
-						zs->sendSingleValue(devices[i].metrics[j].key, valueAsString);
+						zs->sendSingleValue(devices[i].host, devices[i].metrics[j].key, valueAsString);
 					}
 				}
 			}
@@ -161,7 +163,7 @@ void Bus::sendData(){
 						char* valueAsString = (char*) stream.str().c_str();
 						cout << devices[i].metrics[j].key << ": " << valueAsString << endl;
 						devices[i].metrics[j].prevSubmit = timeMillis();
-						zs->sendSingleValue(devices[i].metrics[j].key, valueAsString);
+						zs->sendSingleValue(devices[i].host, devices[i].metrics[j].key, valueAsString);
 					}
 				}
 			}

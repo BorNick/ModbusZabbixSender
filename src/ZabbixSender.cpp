@@ -14,10 +14,9 @@
 #include <iostream>
 using namespace std;
 
-ZabbixSender::ZabbixSender(char* ip, int port, char* host) {
+ZabbixSender::ZabbixSender(char* ip, int port) {
 	this->ip = ip;
 	this->port = port;
-	this->host = host;
 }
 
 ZabbixSender::ZabbixSender(char* filename) {
@@ -41,8 +40,6 @@ ZabbixSender::ZabbixSender(char* filename) {
 	ip = (char*) json_object_get_string(record);
 	json_object_object_get_ex(obj, "port", &record);
 	port = json_object_get_int(record);
-	json_object_object_get_ex(obj, "host", &record);
-	host = (char*)json_object_get_string(record);
 	//cout << "IP: " << ip << "\nport: " << port << endl;
 }
 
@@ -114,10 +111,6 @@ void ZabbixSender::sendSingleValue(char* host, char* key, char* value) {
 	}
 	//cout << cutBuffer << endl;
 	close(sock);
-}
-
-void ZabbixSender::sendSingleValue(char* key, char* value) {
-	sendSingleValue(host, key, value);
 }
 
 ZabbixSender::~ZabbixSender() {

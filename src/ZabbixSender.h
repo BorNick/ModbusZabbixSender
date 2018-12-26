@@ -11,13 +11,11 @@
 
 class ZabbixSender {
 public:
-	ZabbixSender(char* ip, int port, char* host);
+	ZabbixSender(char* ip, int port);
 	ZabbixSender(char* filename);
 	void sendSingleValue(char* host, char* key, char* value);
-	void sendSingleValue(char* key, char* value);
 	virtual ~ZabbixSender();
 private:
-	char* host;
 	char* ip;
 	int port;
 	int createSocket(char* ip, int port);
